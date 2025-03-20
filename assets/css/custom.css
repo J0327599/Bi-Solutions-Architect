@@ -75,7 +75,6 @@
     color: #4a98e9;
     border-radius: 15px;
     font-size: 0.9em;
-    font-weight: 500;
 }
 
 /* Interactive elements */
@@ -247,10 +246,9 @@
 }
 
 .metric .label {
-    color: #3c4858;
+    color: #666;
     font-size: 0.9em;
     line-height: 1.4;
-    font-weight: 500;
 }
 
 .solution-architecture {
@@ -448,7 +446,7 @@
 }
 
 .vis-item {
-    background: #ffffff;
+    background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     overflow: hidden;
@@ -457,7 +455,6 @@
 
 .vis-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 .vis-item img {
@@ -471,40 +468,8 @@
 }
 
 .vis-content h4 {
-    margin: 0 0 0.8em 0;
-    color: #2c3e50;
-    font-size: 1.3em;
-    font-weight: 600;
-}
-
-.vis-content p {
-    margin: 0 0 1.2em 0;
-    color: #34495e;
-    font-size: 1em;
-    line-height: 1.6;
-}
-
-.vis-content .features {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.vis-content .features li {
-    margin-bottom: 0.7em;
-    padding-left: 1.5em;
-    position: relative;
+    margin: 0 0 0.5em 0;
     color: #3c4858;
-    font-size: 0.95em;
-    line-height: 1.5;
-}
-
-.vis-content .features li:before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #4a98e9;
-    font-weight: bold;
 }
 
 .practices-grid {
@@ -720,6 +685,7 @@
     position: relative;
     margin-bottom: 3em;
     padding-left: 120px;
+    max-width: 900px;
 }
 
 .step-number {
@@ -730,85 +696,87 @@
     height: 60px;
     background: #4a98e9;
     border-radius: 50%;
-    color: #fff;
+    color: #ffffff;
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1;
+    box-shadow: 0 3px 10px rgba(74, 152, 233, 0.3);
 }
 
 .step-content {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1.5em;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 2em;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
 }
 
 .step-content h4 {
-    color: #3c4858;
-    margin: 0 0 0.5em 0;
+    color: #1a1a1a;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 0 0 1em 0;
+    letter-spacing: 0.02em;
 }
 
-.deliverables {
+.step-content p {
+    color: #2c3e50;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 0 0 1.5em 0;
+    font-weight: 400;
+}
+
+.step-content .deliverables {
     list-style: none;
     margin: 1em 0 0 0;
     padding: 0;
 }
 
-.deliverables li {
-    margin-bottom: 0.5em;
-    padding-left: 1.5em;
+.step-content .deliverables li {
+    color: #34495e;
+    font-size: 1.05em;
+    line-height: 1.5;
+    margin-bottom: 0.8em;
+    padding-left: 1.8em;
     position: relative;
+    font-weight: 400;
 }
 
-.deliverables li:before {
+.step-content .deliverables li:before {
     content: "✓";
     position: absolute;
     left: 0;
     color: #4a98e9;
+    font-weight: 700;
+    font-size: 1.1em;
 }
 
-.examples-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2em;
-    margin-top: 2em;
+/* Dark mode styles */
+[data-theme="dark"] .step-content {
+    background: #2d2d2d;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
 }
 
-.example-item {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+[data-theme="dark"] .step-content h4 {
+    color: #ffffff;
 }
 
-.example-item:hover {
-    transform: translateY(-5px);
+[data-theme="dark"] .step-content p {
+    color: #e6e6e6;
 }
 
-.example-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+[data-theme="dark"] .step-content .deliverables li {
+    color: #d1d5db;
 }
 
-.example-content {
-    padding: 1.5em;
+[data-theme="dark"] .step-content .deliverables li:before {
+    color: #6ab0ff;
 }
 
-.example-content h4 {
-    margin: 0 0 0.5em 0;
-    color: #3c4858;
-}
-
-.example-content p {
-    margin: 0 0 1em 0;
-    color: #666;
-}
-
+/* Responsive adjustments */
 @media screen and (max-width: 736px) {
     .process-timeline:before {
         left: 30px;
@@ -819,10 +787,27 @@
     }
     
     .step-number {
-        left: 0;
+        left: 10px;
         width: 50px;
         height: 50px;
-        font-size: 1.2em;
+        font-size: 1.3em;
+    }
+    
+    .step-content {
+        padding: 1.5em;
+    }
+
+    .step-content h4 {
+        font-size: 1.3em;
+    }
+
+    .step-content p {
+        font-size: 1em;
+    }
+
+    .step-content .deliverables li {
+        font-size: 1em;
+        padding-left: 1.6em;
     }
     
     .expertise-grid,
@@ -1187,100 +1172,5 @@ body.dark-mode #header .logo .icon {
     
     #header .logo .icon {
         font-size: 1.2em;
-    }
-}
-
-/* Case Study Metadata Styles */
-.industry,
-.duration,
-.team-size {
-    display: inline-block;
-    padding: 0.3em 1em;
-    margin: 0.3em;
-    border-radius: 15px;
-    font-size: 0.9em;
-    background: #f0f5ff;
-    color: #4a98e9;
-}
-
-/* Dark Mode Adjustments */
-[data-theme="dark"] .industry,
-[data-theme="dark"] .duration,
-[data-theme="dark"] .team-size,
-[data-theme="dark"] .tech-tag {
-    background: rgba(74, 152, 233, 0.1);
-    color: #6ab0ff;
-}
-
-[data-theme="dark"] .results {
-    background: var(--card-bg);
-}
-
-[data-theme="dark"] .results h4 {
-    color: #fff;
-}
-
-[data-theme="dark"] .metric {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-[data-theme="dark"] .metric .number {
-    color: #6ab0ff;
-}
-
-[data-theme="dark"] .metric .label {
-    color: #e0e0e0;
-}
-
-@media screen and (max-width: 736px) {
-    .metrics-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .industry,
-    .duration,
-    .team-size {
-        display: inline-block;
-        margin: 0.2em;
-    }
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .vis-item {
-    background: #2d2d2d;
-}
-
-[data-theme="dark"] .vis-content h4 {
-    color: #ffffff;
-}
-
-[data-theme="dark"] .vis-content p {
-    color: #e0e0e0;
-}
-
-[data-theme="dark"] .vis-content .features li {
-    color: #d1d5db;
-}
-
-[data-theme="dark"] .vis-content .features li:before {
-    color: #6ab0ff;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 736px) {
-    .vis-content {
-        padding: 1.2em;
-    }
-
-    .vis-content h4 {
-        font-size: 1.2em;
-    }
-
-    .vis-content p {
-        font-size: 0.95em;
-    }
-
-    .vis-content .features li {
-        font-size: 0.9em;
     }
 } 
