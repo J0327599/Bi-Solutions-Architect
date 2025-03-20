@@ -75,6 +75,7 @@
     color: #4a98e9;
     border-radius: 15px;
     font-size: 0.9em;
+    font-weight: 500;
 }
 
 /* Interactive elements */
@@ -246,9 +247,10 @@
 }
 
 .metric .label {
-    color: #666;
+    color: #3c4858;
     font-size: 0.9em;
     line-height: 1.4;
+    font-weight: 500;
 }
 
 .solution-architecture {
@@ -446,7 +448,7 @@
 }
 
 .vis-item {
-    background: #fff;
+    background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     overflow: hidden;
@@ -455,6 +457,7 @@
 
 .vis-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 .vis-item img {
@@ -468,8 +471,40 @@
 }
 
 .vis-content h4 {
-    margin: 0 0 0.5em 0;
+    margin: 0 0 0.8em 0;
+    color: #2c3e50;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.vis-content p {
+    margin: 0 0 1.2em 0;
+    color: #34495e;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.vis-content .features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.vis-content .features li {
+    margin-bottom: 0.7em;
+    padding-left: 1.5em;
+    position: relative;
     color: #3c4858;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.vis-content .features li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #4a98e9;
+    font-weight: bold;
 }
 
 .practices-grid {
@@ -1113,4 +1148,139 @@
 [data-theme="dark"] .theme-toggle {
     background: #2d2d2d;
     color: #4a98e9;
+}
+
+/* Header Logo and Navigation */
+#header {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#header .logo {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#header .logo .icon {
+    color: #4a98e7;
+    font-size: 1.5em;
+    margin-right: 0.5em;
+}
+
+body.dark-mode #header {
+    background-color: rgba(30, 30, 30, 0.95);
+}
+
+body.dark-mode #header .logo .icon {
+    color: #6ab0ff;
+}
+
+@media screen and (max-width: 736px) {
+    #header .logo {
+        margin-right: 5px;
+    }
+    
+    #header .logo .icon {
+        font-size: 1.2em;
+    }
+}
+
+/* Case Study Metadata Styles */
+.industry,
+.duration,
+.team-size {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 0.3em;
+    border-radius: 15px;
+    font-size: 0.9em;
+    background: #f0f5ff;
+    color: #4a98e9;
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .industry,
+[data-theme="dark"] .duration,
+[data-theme="dark"] .team-size,
+[data-theme="dark"] .tech-tag {
+    background: rgba(74, 152, 233, 0.1);
+    color: #6ab0ff;
+}
+
+[data-theme="dark"] .results {
+    background: var(--card-bg);
+}
+
+[data-theme="dark"] .results h4 {
+    color: #fff;
+}
+
+[data-theme="dark"] .metric {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .metric .number {
+    color: #6ab0ff;
+}
+
+[data-theme="dark"] .metric .label {
+    color: #e0e0e0;
+}
+
+@media screen and (max-width: 736px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .industry,
+    .duration,
+    .team-size {
+        display: inline-block;
+        margin: 0.2em;
+    }
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .vis-item {
+    background: #2d2d2d;
+}
+
+[data-theme="dark"] .vis-content h4 {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .vis-content p {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .vis-content .features li {
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .vis-content .features li:before {
+    color: #6ab0ff;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 736px) {
+    .vis-content {
+        padding: 1.2em;
+    }
+
+    .vis-content h4 {
+        font-size: 1.2em;
+    }
+
+    .vis-content p {
+        font-size: 0.95em;
+    }
+
+    .vis-content .features li {
+        font-size: 0.9em;
+    }
 } 
