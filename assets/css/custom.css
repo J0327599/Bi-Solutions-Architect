@@ -1027,4 +1027,90 @@
     .cta-section {
         padding: 2em;
     }
+}
+
+/* Dark Mode Styles */
+:root {
+    --bg-color: #fff;
+    --text-color: #3c4858;
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --card-bg: #fff;
+    --card-hover-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    --section-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --header-bg: rgba(26, 26, 26, 0.95);
+    --card-bg: #2d2d2d;
+    --card-hover-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    --section-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] #header {
+    background-color: var(--header-bg);
+}
+
+[data-theme="dark"] .capability-item,
+[data-theme="dark"] .solution-item,
+[data-theme="dark"] .process-item,
+[data-theme="dark"] .tool-category,
+[data-theme="dark"] .tech-item,
+[data-theme="dark"] .case-study,
+[data-theme="dark"] .expertise-item,
+[data-theme="dark"] .example-item,
+[data-theme="dark"] .philosophy-item,
+[data-theme="dark"] .practice-item,
+[data-theme="dark"] .tool-item {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4 {
+    color: #fff;
+}
+
+[data-theme="dark"] .tech-tag {
+    background: #3d3d3d;
+    color: #4a98e9;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: #4a98e9;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: #2d2d2d;
+    color: #4a98e9;
 } 
