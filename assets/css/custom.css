@@ -1320,4 +1320,47 @@ body.dark-mode #header .logo .icon {
         width: calc(100% - 20px);
         max-width: 300px;
     }
+}
+
+/* Analytics Stack Section Styles */
+.analytics-tools h3,
+.analytics-tools h4,
+.analytics-tools span,
+.analytics-tools .tool-category,
+.analytics-tools .tool-items,
+.analytics-tools .tool-item {
+    color: #ffffff;
+}
+
+.analytics-tools .tool-item img {
+    max-width: 48px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.analytics-tools .tool-category {
+    margin-bottom: 2em;
+}
+
+.analytics-tools .tool-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.analytics-tools .tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.analytics-tools .tool-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
 } 
