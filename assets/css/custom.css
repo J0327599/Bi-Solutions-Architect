@@ -1173,4 +1173,151 @@ body.dark-mode #header .logo .icon {
     #header .logo .icon {
         font-size: 1.2em;
     }
+}
+
+/* Data Animation Styles */
+.data-animation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em 0;
+    margin-top: 1em;
+    border-top: 1px solid rgba(228, 76, 101, 0.3);
+}
+
+.animate-number {
+    text-align: center;
+    color: #e44c65;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+}
+
+.animate-label {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+@media screen and (max-width: 736px) {
+    .data-animation {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+    
+    .animate-number {
+        font-size: 2em;
+    }
+}
+
+/* Menu Button Styles */
+.menu-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(39, 40, 51, 0.95);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.menu-button .icon {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
+}
+
+.spotlight #nav {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 999;
+    background: rgba(39, 40, 51, 0.95);
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateX(120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.spotlight #nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.spotlight #nav ul li {
+    display: block;
+    margin: 0;
+}
+
+.spotlight #nav ul li a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    border: none;
+    padding: 0.8em 1em;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.spotlight #nav ul li a:hover {
+    color: #e44c65;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.spotlight #nav ul li a.button.primary {
+    background-color: #e44c65;
+    color: #ffffff !important;
+    margin-top: 0.5em;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.spotlight #nav ul li a.button.primary:hover {
+    background-color: #e76278;
+}
+
+/* Hide nav in sections except landing */
+.spotlight #nav {
+    display: block;
+}
+
+/* Show nav only in landing section */
+#banner #nav {
+    display: block;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width: 736px) {
+    .menu-button {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .spotlight #nav {
+        top: 70px;
+        right: 10px;
+        width: calc(100% - 20px);
+        max-width: 300px;
+    }
 } 
